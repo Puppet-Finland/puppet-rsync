@@ -1,8 +1,13 @@
-# A description of what this class does
-#
-# @summary A short summary of the purpose of this class
+# Install rsync package
 #
 # @example
 #   include rsync
 class rsync {
+
+  # Ensure that rsync is installed
+  package { 'rsync-rsync':
+    ensure => 'present',
+    name   => 'rsync',
+  }
+
 }
