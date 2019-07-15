@@ -12,4 +12,8 @@ class rsync::rrsync {
     command => "/bin/cp ${rrsync_location} ${rrsync_target_dir} && /bin/gunzip ${rrsync_target_dir}/rrsync.gz",
     creates => "${rrsync_target_dir}/rrsync",
   }
+  -> file {"${rrsync_target_dir}/rrsync":
+  	ensure => present,
+  	mode   => '0755',
+  }
 }
